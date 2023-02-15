@@ -108,14 +108,17 @@ public class cardHolder
         }
 
         List<cardHolder> cardHolders = new List<cardHolder>();
-        cardHolders.Add(new cardHolder("0123456789101112", 1234, "John", "Smith", 150.30));
-        cardHolders.Add(new cardHolder("0123456789101112", 4321, "Jane", "Doe", 321.13));
-        cardHolders.Add(new cardHolder("0123456789101112", 1111, "Bob", "Jones", 105.60));
-        cardHolders.Add(new cardHolder("0123456789101112", 2222, "Sally", "Smith", 851.84));
-        cardHolders.Add(new cardHolder("0123456789101112", 3333, "Joe", "Johnson", 54.77));
+        cardHolders.Add(new cardHolder("1111111111111111", 1111, "John", "Smith", 150.30));
+        cardHolders.Add(new cardHolder("2222222222222222", 2222, "Jane", "Doe", 321.13));
+        cardHolders.Add(new cardHolder("3333333333333333", 3333, "Bob", "Jones", 105.60));
+        cardHolders.Add(new cardHolder("4444444444444444", 4444, "Sally", "Smith", 851.84));
+        cardHolders.Add(new cardHolder("5555555555555555", 5555, "Joe", "Johnson", 54.77));
 
         // Welcome message
-        Console.WriteLine("Welcome to simple ATM!");
+        Console.WriteLine("############################");
+        Console.WriteLine("## Welcome to simple ATM! ##");
+        Console.WriteLine("############################");
+        Console.WriteLine("");
         Console.WriteLine("Please enter your debit card: ");
         String debitCardNumber = "";
         cardHolder currentUser;
