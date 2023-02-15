@@ -71,18 +71,20 @@ public class cardHolder
     {
         void printOptions()
         {
+            Console.WriteLine("");
             Console.WriteLine("Please choose from one of the following options...");
             Console.WriteLine("1. Deposit");
             Console.WriteLine("2. Withdraw");
             Console.WriteLine("3. Show Balance");
             Console.WriteLine("4. Exit");
+            Console.WriteLine("");
         }
 
         void deposit(cardHolder currentUser)
         {
             Console.WriteLine("How much $$ would you like to deposit: ");
             double deposit = Double.Parse(Console.ReadLine());
-            currentUser.setBalance(deposit);
+            currentUser.setBalance(currentUser.getBalance() + deposit);
             Console.WriteLine("Your new balance is: " + currentUser.getBalance());
         }
 
@@ -91,14 +93,14 @@ public class cardHolder
             Console.WriteLine("How much $$ would you like to withdraw: ");
             double withdrawal = Double.Parse(Console.ReadLine());
             // check if user has enough money
-            if (currentUser.getBalance() > withdrawal)
+            if (currentUser.getBalance() < withdrawal)
             {
-                currentUser.setBalance(currentUser.getBalance() - withdrawal);
-                Console.WriteLine("Your new balance is: " + currentUser.getBalance());
+                Console.WriteLine("You do not have enough money to withdraw that amount.");
             }
             else
             {
-                Console.WriteLine("You do not have enough money to withdraw that amount.");
+                currentUser.setBalance(currentUser.getBalance() - withdrawal);
+                Console.WriteLine("Your new balance is: " + currentUser.getBalance());
             }
         }
 
@@ -147,6 +149,7 @@ public class cardHolder
         }
 
         // ask for pin
+        Console.WriteLine("");
         Console.WriteLine("Please enter your pin: ");
         int userPin = 0;
 
@@ -208,6 +211,7 @@ public class cardHolder
             }
         }
         while (option != 4); // because 4 is the exit option
+        Console.WriteLine("");
         Console.WriteLine("Goodbye!");
 
     }
